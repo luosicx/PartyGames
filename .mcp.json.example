@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "sonarcloud": {
+      "command": "python3",
+      "args": ["/Users/xuchen/Documents/AICode/PartyGames/.claude/mcp-servers/sonarcloud-mcp.py"],
+      "env": {
+        "SONARCLOUD_TOKEN": "your-sonarcloud-token-here",
+        "SONARCLOUD_ORG": "luosicx"
+      }
+    }
+  }
+}
