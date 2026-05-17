@@ -35,3 +35,29 @@ targets:
         basedOnDependencyAnalysis: false
         inputFiles: []
         outputFiles: []
+
+  PartyGamesUnitTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: PartyGamesUnitTests
+    dependencies:
+      - target: PartyGames
+    settings:
+      base:
+        INFOPLIST_FILE: PartyGamesUnitTests/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.partygames.unittests
+        DEVELOPMENT_TEAM: ""
+
+  PartyGamesUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: PartyGamesUITests
+    dependencies:
+      - target: PartyGames
+    settings:
+      base:
+        INFOPLIST_FILE: PartyGamesUITests/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.partygames.uitests
+        DEVELOPMENT_TEAM: ""

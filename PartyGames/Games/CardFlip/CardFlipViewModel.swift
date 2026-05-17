@@ -25,9 +25,9 @@ final class CardFlipViewModel: ObservableObject {
         }.shuffled()
 
         // Reset
-        for i in deck.indices {
-            deck[i].isFlipped = false
-            deck[i].isMatched = false
+        for index in deck.indices {
+            deck[index].isFlipped = false
+            deck[index].isMatched = false
         }
 
         cards = deck
@@ -100,8 +100,8 @@ final class CardFlipViewModel: ObservableObject {
         cards[index] = card
     }
 
-    func setDifficulty(_ d: FlipDifficulty) {
-        difficulty = d
+    func setDifficulty(_ difficulty: FlipDifficulty) {
+        self.difficulty = difficulty
         startGame()
     }
 

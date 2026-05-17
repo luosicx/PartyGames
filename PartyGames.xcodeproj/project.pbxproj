@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04F89816773E7D0168E6AA57 /* FingerRouletteViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB113614C1DD9B7D15B3A82 /* FingerRouletteViewModelTests.swift */; };
 		094F482BBB69165990E39A5B /* SplashAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36687D54440D465861886EA8 /* SplashAdView.swift */; };
+		30FDDD17AFD45D36DA8EBAB9 /* CardFlipViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29425EAD1DAAE111516AEEFB /* CardFlipViewModelTests.swift */; };
 		4003A821980D81C858A18C30 /* GameModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447ABBBB20A2F29646A17991 /* GameModels.swift */; };
 		4329B4DF6F2E4EF7C8098F1E /* FanWheelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E54077E135C45FFB6D7B5 /* FanWheelViewModel.swift */; };
 		64ADD4509C3E4D0263B5E914 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC29CE82C66BF84F3ED8E9 /* ContentView.swift */; };
@@ -17,28 +19,59 @@
 		A2DD445D5803BB0008A970D5 /* FingerRouletteGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500A61DBC21C610309ED3419 /* FingerRouletteGameView.swift */; };
 		B5A6437BDF963248DC9C7AF2 /* PartyGamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37548E12BDBBA7378CFAF89A /* PartyGamesApp.swift */; };
 		B8CA11560FC60294673DCF29 /* CardFlipGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EA13DDA93341CCCE0ED308 /* CardFlipGameView.swift */; };
+		BB54F1EDEB6A09356AB0F14E /* PartyGamesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19270BFDA6B13DDA250B4300 /* PartyGamesUITests.swift */; };
+		CBE569D10487F7E079B34ADD /* GameModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04939D37D355B92C3643E60F /* GameModelsTests.swift */; };
 		D5D2B002EBFBF9A340796D9C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAA00145B99CD1435BB05644 /* Localizable.strings */; };
 		D8987869A1B3B9A922541A4E /* FingerRouletteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD9529B057FEF57BADB986 /* FingerRouletteViewModel.swift */; };
 		E0BDE35C91D268CDBDAF98E2 /* AdConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B058EC292D93045963883 /* AdConfigManager.swift */; };
+		E83106C8DD4389B73B66C38B /* FanWheelViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AE06A71CE886AC22B8A5B /* FanWheelViewModelTests.swift */; };
 		EC553FB09966499175998917 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF34C1AE251AA486B87F89 /* ViewExtensions.swift */; };
 		EF5366010DB37447CF4EFEB6 /* FanWheelGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE249C8F80B9FF0D02BF0C2C /* FanWheelGameView.swift */; };
+		EFDB5FD0CE80FE81E7CE7FEA /* AdConfigManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C0AB523D3B033907AD0782 /* AdConfigManagerTests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BD38A8C893611FBC7133F54D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FA686612B5DFF937F61A599 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7B61D33EA678F4F39712ABB;
+			remoteInfo = PartyGames;
+		};
+		D3175F194864BFB208D47F64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FA686612B5DFF937F61A599 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7B61D33EA678F4F39712ABB;
+			remoteInfo = PartyGames;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		041AE06A71CE886AC22B8A5B /* FanWheelViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanWheelViewModelTests.swift; sourceTree = "<group>"; };
+		04939D37D355B92C3643E60F /* GameModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelsTests.swift; sourceTree = "<group>"; };
+		0A996A33C22D1E91CA98E8C8 /* PartyGamesUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PartyGamesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19270BFDA6B13DDA250B4300 /* PartyGamesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyGamesUITests.swift; sourceTree = "<group>"; };
+		1AB113614C1DD9B7D15B3A82 /* FingerRouletteViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerRouletteViewModelTests.swift; sourceTree = "<group>"; };
 		234B058EC292D93045963883 /* AdConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdConfigManager.swift; sourceTree = "<group>"; };
 		23AD9529B057FEF57BADB986 /* FingerRouletteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerRouletteViewModel.swift; sourceTree = "<group>"; };
+		29425EAD1DAAE111516AEEFB /* CardFlipViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlipViewModelTests.swift; sourceTree = "<group>"; };
 		36687D54440D465861886EA8 /* SplashAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashAdView.swift; sourceTree = "<group>"; };
 		37548E12BDBBA7378CFAF89A /* PartyGamesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyGamesApp.swift; sourceTree = "<group>"; };
+		3B4E0206A5C720875363D687 /* PartyGamesUnitTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PartyGamesUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		447ABBBB20A2F29646A17991 /* GameModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModels.swift; sourceTree = "<group>"; };
 		49AC29CE82C66BF84F3ED8E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		500A61DBC21C610309ED3419 /* FingerRouletteGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerRouletteGameView.swift; sourceTree = "<group>"; };
 		63CF1244286B2C0A7C01BA45 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6913246FEAC08DC6131FC3D3 /* CardFlipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlipViewModel.swift; sourceTree = "<group>"; };
 		6D2FCA9BF65E568E769DD43B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		78A6BA077874B276F3AF6064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		83BF34C1AE251AA486B87F89 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		85EA13DDA93341CCCE0ED308 /* CardFlipGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlipGameView.swift; sourceTree = "<group>"; };
+		8A03B7D13E59F63221BD4864 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A399DAD68E53755DE6BF4AE6 /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
 		B59E73511178399D317AE3A3 /* PartyGames.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PartyGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8C0AB523D3B033907AD0782 /* AdConfigManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdConfigManagerTests.swift; sourceTree = "<group>"; };
 		CE249C8F80B9FF0D02BF0C2C /* FanWheelGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanWheelGameView.swift; sourceTree = "<group>"; };
 		ED9E54077E135C45FFB6D7B5 /* FanWheelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanWheelViewModel.swift; sourceTree = "<group>"; };
 		F0B534E50577672D0D325793 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
@@ -64,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				0B71CE5AD8539DDF913386D4 /* PartyGames */,
+				9B40A67A4C8D52BEDD9C1E47 /* PartyGamesUITests */,
+				F14A61B88C06489D548A4F5B /* PartyGamesUnitTests */,
 				AF7799934AB6AB864825D244 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +138,15 @@
 			path = Ads;
 			sourceTree = "<group>";
 		};
+		9B40A67A4C8D52BEDD9C1E47 /* PartyGamesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8A03B7D13E59F63221BD4864 /* Info.plist */,
+				19270BFDA6B13DDA250B4300 /* PartyGamesUITests.swift */,
+			);
+			path = PartyGamesUITests;
+			sourceTree = "<group>";
+		};
 		A9EBB027ABE38339A1243F63 /* Games */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				B59E73511178399D317AE3A3 /* PartyGames.app */,
+				0A996A33C22D1E91CA98E8C8 /* PartyGamesUITests.xctest */,
+				3B4E0206A5C720875363D687 /* PartyGamesUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,9 +203,58 @@
 			path = FingerRoulette;
 			sourceTree = "<group>";
 		};
+		F14A61B88C06489D548A4F5B /* PartyGamesUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				B8C0AB523D3B033907AD0782 /* AdConfigManagerTests.swift */,
+				29425EAD1DAAE111516AEEFB /* CardFlipViewModelTests.swift */,
+				041AE06A71CE886AC22B8A5B /* FanWheelViewModelTests.swift */,
+				1AB113614C1DD9B7D15B3A82 /* FingerRouletteViewModelTests.swift */,
+				04939D37D355B92C3643E60F /* GameModelsTests.swift */,
+				78A6BA077874B276F3AF6064 /* Info.plist */,
+			);
+			path = PartyGamesUnitTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		38DFEA72172F99D962285ABE /* PartyGamesUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FA68B5AC179C4BB0C747DF6 /* Build configuration list for PBXNativeTarget "PartyGamesUnitTests" */;
+			buildPhases = (
+				57BC6EF73ED4043DB31C1EC9 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9AA8C17FAAF3472EAEB7FFCD /* PBXTargetDependency */,
+			);
+			name = PartyGamesUnitTests;
+			packageProductDependencies = (
+			);
+			productName = PartyGamesUnitTests;
+			productReference = 3B4E0206A5C720875363D687 /* PartyGamesUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4EDC0942863BB54B7F9E6257 /* PartyGamesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38DE03E04FC2465429E4B97F /* Build configuration list for PBXNativeTarget "PartyGamesUITests" */;
+			buildPhases = (
+				1075C1DA9427F0A4A6086DF5 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38CED74A0E88E6B8A93E4B46 /* PBXTargetDependency */,
+			);
+			name = PartyGamesUITests;
+			packageProductDependencies = (
+			);
+			productName = PartyGamesUITests;
+			productReference = 0A996A33C22D1E91CA98E8C8 /* PartyGamesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		B7B61D33EA678F4F39712ABB /* PartyGames */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97C1E2C0D20320A8029AA7BB /* Build configuration list for PBXNativeTarget "PartyGames" */;
@@ -188,6 +283,13 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					38DFEA72172F99D962285ABE = {
+						DevelopmentTeam = "";
+					};
+					4EDC0942863BB54B7F9E6257 = {
+						DevelopmentTeam = "";
+						TestTargetID = B7B61D33EA678F4F39712ABB;
+					};
 					B7B61D33EA678F4F39712ABB = {
 						DevelopmentTeam = "";
 					};
@@ -209,6 +311,8 @@
 			projectRoot = "";
 			targets = (
 				B7B61D33EA678F4F39712ABB /* PartyGames */,
+				4EDC0942863BB54B7F9E6257 /* PartyGamesUITests */,
+				38DFEA72172F99D962285ABE /* PartyGamesUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -247,6 +351,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1075C1DA9427F0A4A6086DF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB54F1EDEB6A09356AB0F14E /* PartyGamesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E694F9980824F877A697BC0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,7 +380,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		57BC6EF73ED4043DB31C1EC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFDB5FD0CE80FE81E7CE7FEA /* AdConfigManagerTests.swift in Sources */,
+				30FDDD17AFD45D36DA8EBAB9 /* CardFlipViewModelTests.swift in Sources */,
+				E83106C8DD4389B73B66C38B /* FanWheelViewModelTests.swift in Sources */,
+				04F89816773E7D0168E6AA57 /* FingerRouletteViewModelTests.swift in Sources */,
+				CBE569D10487F7E079B34ADD /* GameModelsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		38CED74A0E88E6B8A93E4B46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7B61D33EA678F4F39712ABB /* PartyGames */;
+			targetProxy = BD38A8C893611FBC7133F54D /* PBXContainerItemProxy */;
+		};
+		9AA8C17FAAF3472EAEB7FFCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7B61D33EA678F4F39712ABB /* PartyGames */;
+			targetProxy = D3175F194864BFB208D47F64 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CAA00145B99CD1435BB05644 /* Localizable.strings */ = {
@@ -283,6 +420,24 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		03ABA7A07895D849391EB54E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = PartyGamesUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.partygames.unittests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PartyGames.app/PartyGames";
+			};
+			name = Release;
+		};
 		08FDB9CA8074538B30EF2A76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -359,6 +514,42 @@
 			};
 			name = Debug;
 		};
+		59668D0F4F84286F5BE943BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = PartyGamesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.partygames.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PartyGames;
+			};
+			name = Release;
+		};
+		8DF248EC41D4B9DEF60E3A57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = PartyGamesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.partygames.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PartyGames;
+			};
+			name = Debug;
+		};
 		ACB8C4AB4FA47EDD28FBFEFE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -376,6 +567,24 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
+		};
+		AF3F1A3AD86E1CA5533D7687 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = PartyGamesUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.partygames.unittests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PartyGames.app/PartyGames";
+			};
+			name = Debug;
 		};
 		D45E69301F201E78FAC35686 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -445,11 +654,29 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		38DE03E04FC2465429E4B97F /* Build configuration list for PBXNativeTarget "PartyGamesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DF248EC41D4B9DEF60E3A57 /* Debug */,
+				59668D0F4F84286F5BE943BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		97C1E2C0D20320A8029AA7BB /* Build configuration list for PBXNativeTarget "PartyGames" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				355DF25D47234C771FA0DA39 /* Debug */,
 				ACB8C4AB4FA47EDD28FBFEFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9FA68B5AC179C4BB0C747DF6 /* Build configuration list for PBXNativeTarget "PartyGamesUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF3F1A3AD86E1CA5533D7687 /* Debug */,
+				03ABA7A07895D849391EB54E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

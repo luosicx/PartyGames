@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CardFlipGameView: View {
-    @StateObject private var vm = CardFlipViewModel()
+    @StateObject private var viewModel = CardFlipViewModel()
 
     var body: some View {
         VStack(spacing: 0) {
@@ -12,7 +12,7 @@ struct CardFlipGameView: View {
         }
         .padding(.horizontal)
         .background(AppTheme.background.ignoresSafeArea())
-        .onAppear { vm.startGame() }
+        .onAppear { viewModel.startGame() }
     }
 
     // MARK: - Header
@@ -23,9 +23,9 @@ struct CardFlipGameView: View {
                 .foregroundColor(AppTheme.accent)
 
             HStack(spacing: 24) {
-                statBadge(label: loc("cardflip_flips"),  value: "\(vm.flipCount)")
-                statBadge(label: loc("cardflip_matched"), value: "\(vm.matchedPairs)/\(vm.totalPairs)")
-                statBadge(label: loc("cardflip_time"),    value: vm.formattedTime)
+                statBadge(label: loc("cardflip_flips"), value: "\(viewModel.flipCount)")
+                statBadge(label: loc("cardflip_matched"), value: "\(viewModel.matchedPairs)/\(viewModel.totalPairs)")
+                statBadge(label: loc("cardflip_time"), value: viewModel.formattedTime)
             }
         }
         .padding(.vertical, 12)
@@ -49,15 +49,15 @@ struct CardFlipGameView: View {
     // MARK: - Difficulty
     private var difficultyPicker: some View {
         HStack(spacing: 8) {
-            ForEach(FlipDifficulty.allCases) { d in
-                Button(d.displayName) {
-                    vm.setDifficulty(d)
+            ForEach(FlipDifficulty.allCases) { difficulty in
+                Button(difficulty.displayName) {
+                    viewModel.setDifficulty(difficulty)
                 }
                 .font(.system(.subheadline, design: .rounded, weight: .semibold))
-                .foregroundColor(vm.difficulty == d ? .white : AppTheme.textSecondary)
+                .foregroundColor(viewModel.difficulty == difficulty ? .white : AppTheme.textSecondary)
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
-                .background(vm.difficulty == d ? AppTheme.primary : AppTheme.surface)
+                .background(viewModel.difficulty == difficulty ? AppTheme.primary : AppTheme.surface)
                 .clipShape(Capsule())
             }
         }
@@ -67,12 +67,12 @@ struct CardFlipGameView: View {
     // MARK: - Grid
     private var gameGrid: some View {
         let spacing: CGFloat = 8
-        let columns = Array(repeating: GridItem(.flexible(), spacing: spacing), count: vm.columns)
+        let columns = Array(repeating: GridItem(.flexible(), spacing: spacing), count: viewModel.columns)
 
         return LazyVGrid(columns: columns, spacing: spacing) {
-            ForEach(Array(vm.cards.enumerated()), id: \.element.id) { idx, card in
+            ForEach(Array(viewModel.cards.enumerated()), id: \.element.id) { idx, card in
                 CardCell(card: card)
-                    .onTapGesture { vm.tapCard(at: idx) }
+                    .onTapGesture { viewModel.tapCard(at: idx) }
             }
         }
         .padding(.top, 8)
