@@ -42,14 +42,15 @@ final class AdConfigManager: ObservableObject {
     @Published var splashAdDismissed = false
     @Published var bannerAdDismissed = false
 
+    private static let defaultRemoteURL = "https://example.com/ad_config.json"
+
     private let remoteURL: String
     private let cacheKey = "ad_remote_config_cache"
 
     init(remoteURL: String? = nil) {
         self.remoteURL = remoteURL
             ?? Bundle.main.object(forInfoDictionaryKey: "AdRemoteConfigURL") as? String
-            ?? "https://example.com/ad_config.json"
-        self.remoteURL = remoteURL
+            ?? Self.defaultRemoteURL
         loadCached()
     }
 
