@@ -4,7 +4,7 @@
       "command": "python3",
       "args": ["/Users/xuchen/Documents/AICode/PartyGames/.claude/mcp-servers/sonarcloud-mcp.py"],
       "env": {
-        "SONARCLOUD_TOKEN": "b1603765da27267ae117346983142a1da74422ff",
+        "SONARCLOUD_TOKEN": "your-sonarcloud-token-here",
         "SONARCLOUD_ORG": "luosicx"
       }
     }
