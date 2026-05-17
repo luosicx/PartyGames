@@ -1,0 +1,43 @@
+/* Chinese (Simplified) Localization - Party Games */
+
+/* App */
+"tab_cardflip" = "翻牌子";
+"tab_roulette" = "指尖轮盘";
+"tab_fanwheel" = "扇形转盘";
+
+/* Card Flip */
+"cardflip_title" = "翻牌子";
+"cardflip_flips" = "翻牌次数";
+"cardflip_matched" = "已配对";
+"cardflip_time" = "时间";
+"difficulty_easy" = "简单";
+"difficulty_medium" = "中等";
+"difficulty_hard" = "困难";
+
+/* Finger Roulette */
+"roulette_title" = "指尖轮盘";
+"roulette_hint" = "滑动转盘开始旋转！";
+"roulette_result" = "结果";
+"truth" = "真心话";
+"dare" = "大冒险";
+"double_dare" = "双倍冒险";
+"wildcard" = "任意牌";
+
+/* Fan Wheel */
+"fanwheel_title" = "扇形转盘";
+"fanwheel_spin" = "转动";
+"fanwheel_result" = "结果";
+"prize_big" = "大奖";
+"prize_small" = "小奖";
+"prize_nothing" = "再试一次";
+"prize_jackpot" = "头奖！";
+"challenge_sing" = "唱歌";
+"challenge_dance" = "跳舞";
+"challenge_joke" = "讲笑话";
+"challenge_mime" = "比手画脚";
+"challenge_story" = "讲故事";
+"challenge_impress" = "惊艳全场";
+
+/* Ads */
+"splash_wait" = "即将进入";
+"splash_close" = "关闭";

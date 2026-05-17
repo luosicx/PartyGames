@@ -1,0 +1,43 @@
+/* English Localization - Party Games */
+
+/* App */
+"tab_cardflip" = "Card Flip";
+"tab_roulette" = "Roulette";
+"tab_fanwheel" = "Fan Wheel";
+
+/* Card Flip */
+"cardflip_title" = "Card Flip";
+"cardflip_flips" = "Flips";
+"cardflip_matched" = "Matched";
+"cardflip_time" = "Time";
+"difficulty_easy" = "Easy";
+"difficulty_medium" = "Medium";
+"difficulty_hard" = "Hard";
+
+/* Finger Roulette */
+"roulette_title" = "Finger Roulette";
+"roulette_hint" = "Flick the wheel to spin!";
+"roulette_result" = "Result";
+"truth" = "Truth";
+"dare" = "Dare";
+"double_dare" = "Double Dare";
+"wildcard" = "Wild Card";
+
+/* Fan Wheel */
+"fanwheel_title" = "Fan Wheel";
+"fanwheel_spin" = "SPIN";
+"fanwheel_result" = "Result";
+"prize_big" = "Big Prize";
+"prize_small" = "Small Prize";
+"prize_nothing" = "Try Again";
+"prize_jackpot" = "JACKPOT!";
+"challenge_sing" = "Sing";
+"challenge_dance" = "Dance";
+"challenge_joke" = "Tell a Joke";
+"challenge_mime" = "Charades";
+"challenge_story" = "Tell a Story";
+"challenge_impress" = "Impress Everyone";
+
+/* Ads */
+"splash_wait" = "Continue in";
+"splash_close" = "Close";

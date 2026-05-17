@@ -1,0 +1,26 @@
+name: PartyGames
+options:
+  bundleIdPrefix: com.partygames
+  deploymentTarget:
+    iOS: "16.0"
+  xcodeVersion: "15.0"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    INFOPLIST_FILE: PartyGames/Info.plist
+    PRODUCT_BUNDLE_IDENTIFIER: com.partygames.app
+
+targets:
+  PartyGames:
+    type: application
+    platform: iOS
+    sources:
+      - path: PartyGames
+    settings:
+      base:
+        INFOPLIST_FILE: PartyGames/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.partygames.app
+        DEVELOPMENT_TEAM: ""
+        SWIFT_VERSION: "5.9"
+        ASSETCATALOG_COMPILER_APPICON_NAME: ""
