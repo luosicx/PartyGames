@@ -45,7 +45,10 @@ final class AdConfigManager: ObservableObject {
     private let remoteURL: String
     private let cacheKey = "ad_remote_config_cache"
 
-    init(remoteURL: String = "https://example.com/ad_config.json") {
+    init(remoteURL: String? = nil) {
+        self.remoteURL = remoteURL
+            ?? Bundle.main.object(forInfoDictionaryKey: "AdRemoteConfigURL") as? String
+            ?? "https://example.com/ad_config.json"
         self.remoteURL = remoteURL
         loadCached()
     }

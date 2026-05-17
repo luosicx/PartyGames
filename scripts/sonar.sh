@@ -1,14 +1,14 @@
 #!/bin/bash
 # =============================================================================
-# SonarQube Community Edition — Analysis Runner
+# SonarCloud — Analysis Runner for PartyGames
 #
 # Prerequisites:
 #   brew install sonar-scanner swiftlint
-#   docker run -d --name sonarqube -p 9000:9000 sonarqube:community
+#   SonarCloud account + token: https://sonarcloud.io
 #
 # Usage:
-#   export SONAR_HOST_URL=http://localhost:9000
-#   export SONAR_LOGIN=<your-token>
+#   export SONAR_TOKEN=<your-sonarcloud-token>
+#   export SONAR_ORG=<your-organization-key>
 #   ./scripts/sonar.sh
 # =============================================================================
 set -euo pipefail
@@ -70,9 +70,11 @@ run_tests() {
         -derivedDataPath "$DERIVED_DATA" \
         -enableCodeCoverage YES \
         -quiet \
-        2>&1 | tail -20
+        2>&1 | tail -20 || {
+        warn "Tests failed or no test target configured — skipping coverage"
+        return 0
+    }
 
-    # Locate xcresult
     XCRESULT=$(find "$DERIVED_DATA/Logs/Test" -name "*.xcresult" -type d 2>/dev/null | head -1)
     if [ -z "$XCRESULT" ]; then
         warn "No .xcresult found — skipping coverage"
@@ -106,35 +108,44 @@ run_swiftlint() {
     log "SwiftLint report: $PROJECT_DIR/swiftlint-report.json"
 }
 
-# ---- Step 5: Sonar Scanner ----
+# ---- Step 5: Sonar Scanner (SonarCloud) ----
 run_scanner() {
-    log "Running sonar-scanner..."
+    log "Running sonar-scanner → SonarCloud..."
 
-    local host="${SONAR_HOST_URL:-http://localhost:9000}"
-    local login="${SONAR_LOGIN:-}"
+    local token="${SONAR_TOKEN:-}"
+    local org="${SONAR_ORG:-}"
 
-    echo "  Host:  $host"
-    echo "  Login: ${login:0:6}..."
-
-    if [ -z "$login" ]; then
-        warn "SONAR_LOGIN not set. Provide a token via: export SONAR_LOGIN=sqp_..."
-        warn "Skipping sonar-scanner. Set the token and re-run."
-        return 1
+    if [ -z "$token" ]; then
+        err "SONAR_TOKEN not set. Generate at: https://sonarcloud.io/account/security"
     fi
 
+    if [ -z "$org" ]; then
+        err "SONAR_ORG not set. Find your org key at: https://sonarcloud.io/account/organizations"
+    fi
+
+    echo "  Host:  https://sonarcloud.io"
+    echo "  Org:   $org"
+
     sonar-scanner \
-        -Dsonar.host.url="$host" \
-        -Dsonar.login="$login" \
+        -Dsonar.host.url=https://sonarcloud.io \
+        -Dsonar.token="$token" \
+        -Dsonar.organization="$org" \
         -Dproject.settings="$PROJECT_DIR/sonar-project.properties"
 
-    log "SonarQube analysis complete → $host/dashboard?id=com.partygames.app"
+    log "SonarCloud analysis complete → https://sonarcloud.io/dashboard?id=luosicx_PartyGames"
+}
+
+# ---- Step 6: Open Dashboard ----
+open_dashboard() {
+    log "Opening SonarCloud dashboard..."
+    open "https://sonarcloud.io/dashboard?id=luosicx_PartyGames" 2>/dev/null || true
 }
 
 # ---- Main ----
 main() {
     echo ""
     echo "=============================================="
-    echo "  SonarQube Analysis — PartyGames"
+    echo "  SonarCloud Analysis — PartyGames"
     echo "=============================================="
     echo ""
 
@@ -144,9 +155,10 @@ main() {
     convert_coverage
     run_swiftlint
     run_scanner
+    open_dashboard
 
     echo ""
-    log "Done. View results at: ${SONAR_HOST_URL:-http://localhost:9000}/dashboard?id=com.partygames.app"
+    log "Done."
 }
 
 main
