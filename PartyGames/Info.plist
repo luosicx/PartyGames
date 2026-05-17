@@ -40,5 +40,7 @@
 		<string>en</string>
 		<string>zh-Hans</string>
 	</array>
+	<key>AdRemoteConfigURL</key>
+	<string>https://example.com/ad_config.json</string>
 </dict>
 </plist>
