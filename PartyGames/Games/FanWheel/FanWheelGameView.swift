@@ -59,7 +59,6 @@ struct FanWheelGameView: View {
                     ForEach(Array(viewModel.segments.enumerated()), id: \.element.id) { idx, seg in
                         let midAngle = Angle(degrees: Double(idx) * viewModel.segmentAngle + viewModel.segmentAngle / 2)
                         let iconRadius = radius * 0.55
-                        let labelRadius = radius * 0.78
                         VStack(spacing: 2) {
                             Image(systemName: seg.icon)
                                 .font(.system(size: 16, weight: .bold))
