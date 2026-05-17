@@ -54,7 +54,7 @@ final class CardFlipViewModel: ObservableObject {
               !cards[index].isMatched
         else { return }
 
-        cards[index].isFlipped = true
+        setCardFlipped(index, to: true)
         flipCount += 1
 
         guard let first = firstFlippedIndex else {
@@ -66,8 +66,8 @@ final class CardFlipViewModel: ObservableObject {
         let second = index
 
         if cards[first].content == cards[second].content {
-            cards[first].isMatched = true
-            cards[second].isMatched = true
+            setCardMatched(first, to: true)
+            setCardMatched(second, to: true)
             matchedPairs += 1
             firstFlippedIndex = nil
             isProcessing = false
@@ -78,12 +78,26 @@ final class CardFlipViewModel: ObservableObject {
             }
         } else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { [weak self] in
-                self?.cards[first].isFlipped = false
-                self?.cards[second].isFlipped = false
-                self?.firstFlippedIndex = nil
-                self?.isProcessing = false
+                guard let self else { return }
+                setCardFlipped(first, to: false)
+                setCardFlipped(second, to: false)
+                self.firstFlippedIndex = nil
+                self.isProcessing = false
             }
         }
+    }
+
+    // Explicit element replacement to reliably trigger @Published
+    private func setCardFlipped(_ index: Int, to value: Bool) {
+        var card = cards[index]
+        card.isFlipped = value
+        cards[index] = card
+    }
+
+    private func setCardMatched(_ index: Int, to value: Bool) {
+        var card = cards[index]
+        card.isMatched = value
+        cards[index] = card
     }
 
     func setDifficulty(_ d: FlipDifficulty) {
