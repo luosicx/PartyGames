@@ -27,8 +27,8 @@ struct ContentView: View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
                 tabButton(index: 0, icon: "rectangle.on.rectangle.angled", title: loc("tab_cardflip"))
-                tabButton(index: 1, icon: "circle.circle",              title: loc("tab_roulette"))
-                tabButton(index: 2, icon: "gearshape.2",                title: loc("tab_fanwheel"))
+                tabButton(index: 1, icon: "circle.circle", title: loc("tab_roulette"))
+                tabButton(index: 2, icon: "gearshape.2", title: loc("tab_fanwheel"))
             }
             .padding(.top, 8)
             .padding(.bottom, 4)

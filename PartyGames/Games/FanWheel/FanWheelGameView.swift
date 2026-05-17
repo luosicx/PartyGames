@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct FanWheelGameView: View {
-    @StateObject private var vm = FanWheelViewModel()
+    @StateObject private var viewModel = FanWheelViewModel()
 
     var body: some View {
         VStack(spacing: 0) {
@@ -18,21 +18,21 @@ struct FanWheelGameView: View {
         }
         .padding(.horizontal)
         .background(AppTheme.background.ignoresSafeArea())
-        .onAppear { vm.selectPreset(0) }
+        .onAppear { viewModel.selectPreset(0) }
     }
 
     // MARK: - Preset
     private var presetPicker: some View {
         HStack(spacing: 8) {
-            ForEach(Array(vm.presets.enumerated()), id: \.offset) { idx, preset in
+            ForEach(Array(viewModel.presets.enumerated()), id: \.offset) { idx, preset in
                 Button(preset.name) {
-                    vm.selectPreset(idx)
+                    viewModel.selectPreset(idx)
                 }
                 .font(.system(.subheadline, design: .rounded, weight: .semibold))
-                .foregroundColor(vm.selectedPreset == idx ? .white : AppTheme.textSecondary)
+                .foregroundColor(viewModel.selectedPreset == idx ? .white : AppTheme.textSecondary)
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
-                .background(vm.selectedPreset == idx ? AppTheme.primary : AppTheme.surface)
+                .background(viewModel.selectedPreset == idx ? AppTheme.primary : AppTheme.surface)
                 .clipShape(Capsule())
             }
         }
@@ -47,17 +47,17 @@ struct FanWheelGameView: View {
                 let diameter = min(geo.size.width, geo.size.height)
                 let radius = diameter / 2
                 ZStack {
-                    ForEach(Array(vm.segments.enumerated()), id: \.element.id) { idx, seg in
+                    ForEach(Array(viewModel.segments.enumerated()), id: \.element.id) { idx, seg in
                         FanSlice(
-                            startAngle: Angle(degrees: Double(idx) * vm.segmentAngle),
-                            endAngle:   Angle(degrees: Double(idx + 1) * vm.segmentAngle),
+                            startAngle: Angle(degrees: Double(idx) * viewModel.segmentAngle),
+                            endAngle: Angle(degrees: Double(idx + 1) * viewModel.segmentAngle),
                             color: seg.color
                         )
                     }
 
                     // Icons & labels on wheel
-                    ForEach(Array(vm.segments.enumerated()), id: \.element.id) { idx, seg in
-                        let midAngle = Angle(degrees: Double(idx) * vm.segmentAngle + vm.segmentAngle / 2)
+                    ForEach(Array(viewModel.segments.enumerated()), id: \.element.id) { idx, seg in
+                        let midAngle = Angle(degrees: Double(idx) * viewModel.segmentAngle + viewModel.segmentAngle / 2)
                         let iconRadius = radius * 0.55
                         let labelRadius = radius * 0.78
                         VStack(spacing: 2) {
@@ -87,7 +87,7 @@ struct FanWheelGameView: View {
                         )
                         .shadow(color: AppTheme.gold.opacity(0.5), radius: 8)
                 }
-                .rotationEffect(.degrees(vm.rotation))
+                .rotationEffect(.degrees(viewModel.rotation))
                 .frame(width: diameter, height: diameter)
                 .position(x: geo.size.width / 2, y: geo.size.height / 2)
             }
@@ -108,15 +108,15 @@ struct FanWheelGameView: View {
     // MARK: - Spin Button
     private var spinButton: some View {
         Button {
-            vm.spin()
+            viewModel.spin()
         } label: {
             HStack(spacing: 8) {
                 Image(systemName: "arrow.clockwise")
                 Text(loc("fanwheel_spin"))
             }
         }
-        .buttonStyle(PartyButtonStyle(color: vm.isSpinning ? Color.gray : AppTheme.primary))
-        .disabled(vm.isSpinning)
+        .buttonStyle(PartyButtonStyle(color: viewModel.isSpinning ? Color.gray : AppTheme.primary))
+        .disabled(viewModel.isSpinning)
         .padding(.top, 16)
         .pulse()
     }
@@ -124,7 +124,7 @@ struct FanWheelGameView: View {
     // MARK: - Result
     @ViewBuilder
     private var resultBanner: some View {
-        if vm.showResult, let result = vm.resultSegment {
+        if viewModel.showResult, let result = viewModel.resultSegment {
             HStack(spacing: 12) {
                 Image(systemName: result.icon)
                     .font(.title2)
@@ -146,7 +146,7 @@ struct FanWheelGameView: View {
                     .stroke(result.color, lineWidth: 1)
             )
             .transition(.move(edge: .bottom).combined(with: .opacity))
-            .animation(.spring(response: 0.4, dampingFraction: 0.7), value: vm.showResult)
+            .animation(.spring(response: 0.4, dampingFraction: 0.7), value: viewModel.showResult)
             .padding(.top, 16)
             .padding(.horizontal, 20)
         }
