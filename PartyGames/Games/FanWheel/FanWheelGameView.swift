@@ -107,7 +107,9 @@ struct FanWheelGameView: View {
 
     // MARK: - Spin Button
     private var spinButton: some View {
-        Button(action: { vm.spin() }) {
+        Button {
+            vm.spin()
+        } label: {
             HStack(spacing: 8) {
                 Image(systemName: "arrow.clockwise")
                 Text(loc("fanwheel_spin"))

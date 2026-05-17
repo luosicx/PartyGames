@@ -164,6 +164,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97C1E2C0D20320A8029AA7BB /* Build configuration list for PBXNativeTarget "PartyGames" */;
 			buildPhases = (
+				D5AE56AF8598C1866CB24F3C /* SwiftLint */,
 				3E694F9980824F877A697BC0 /* Sources */,
 				943A1398FDF8EF06E243F01B /* Resources */,
 			);
@@ -222,6 +223,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D5AE56AF8598C1866CB24F3C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint lint --quiet\nelse\n  echo \"warning: SwiftLint not installed, skipping\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3E694F9980824F877A697BC0 /* Sources */ = {
