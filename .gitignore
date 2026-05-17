@@ -32,6 +32,9 @@ Carthage/Build/
 
 # Project-specific
 *.generated.swift
-.scannerwork/
+
+# SonarQube
+coverage/
 swiftlint-report.json
+.scannerwork/
 __pycache__/
