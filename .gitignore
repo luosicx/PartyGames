@@ -32,3 +32,6 @@ Carthage/Build/
 
 # Project-specific
 *.generated.swift
+.scannerwork/
+swiftlint-report.json
+__pycache__/
