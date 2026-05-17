@@ -1,0 +1,91 @@
+# SwiftLint configuration — PartyGames
+
+# ---- Included / Excluded ----
+included:
+  - PartyGames
+
+# ---- Opt-in Rules ----
+opt_in_rules:
+  - empty_count
+  - empty_string
+  - fatal_error_message
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - overridden_super_call
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - sorted_imports
+  - toggle_bool
+  - unused_declaration
+  - unused_import
+
+# ---- Disabled Rules ----
+disabled_rules:
+  - trailing_comma            # Trailing commas improve diffs
+  - opening_brace             # Conflicts with multi-line collection alignment
+  - closure_end_indentation   # Xcode indentation handles this
+  - comma                     # Alignment spaces before commas are intentional
+
+# ---- Identifier Names ----
+identifier_name:
+  min_length:
+    error: 2
+  max_length: 50
+  excluded:
+    - id
+    - vm
+    - d
+    - i
+    - x
+    - y
+    - ad
+  validates_start_with_lowercase:
+    warning: false
+
+# ---- Line Length ----
+line_length:
+  warning: 140
+  error: 200
+  ignores_comments: true
+  ignores_urls: true
+
+# ---- Nesting ----
+nesting:
+  type_level:
+    warning: 3
+    error: 5
+  function_level:
+    warning: 5
+    error: 8
+
+# ---- Type Body Length ----
+type_body_length:
+  warning: 300
+  error: 500
+
+# ---- File Length ----
+file_length:
+  warning: 500
+  error: 1000
+
+# ---- Function Body Length ----
+function_body_length:
+  warning: 60
+  error: 100
+
+# ---- Cyclomatic Complexity ----
+cyclomatic_complexity:
+  warning: 12
+  error: 20
+
+# ---- Colon ----
+colon:
+  flexible_right_spacing: true
+  apply_to_dictionaries: false
+
+# ---- Trailing Closure ----
+multiple_closures_with_trailing_closure: warning
+
+# ---- Force Cast / Try ----
+force_cast: warning
+force_try: warning

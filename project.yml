@@ -24,3 +24,14 @@ targets:
         DEVELOPMENT_TEAM: ""
         SWIFT_VERSION: "5.9"
         ASSETCATALOG_COMPILER_APPICON_NAME: ""
+    preBuildScripts:
+      - name: "SwiftLint"
+        script: |
+          if which swiftlint > /dev/null; then
+            swiftlint lint --quiet
+          else
+            echo "warning: SwiftLint not installed, skipping"
+          fi
+        basedOnDependencyAnalysis: false
+        inputFiles: []
+        outputFiles: []

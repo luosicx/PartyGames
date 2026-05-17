@@ -2,9 +2,9 @@ import SwiftUI
 
 // MARK: - Remote Ad Configuration
 struct AdRemoteConfig: Codable {
-    var adsEnabled: Bool = false
-    var splashAd: SplashAdConfig? = nil
-    var bannerAd: BannerAdConfig? = nil
+    var adsEnabled = false
+    var splashAd: SplashAdConfig?
+    var bannerAd: BannerAdConfig?
 }
 
 struct SplashAdConfig: Codable {
