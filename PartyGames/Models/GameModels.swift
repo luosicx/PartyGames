@@ -59,28 +59,28 @@ struct RoulettePreset: Identifiable {
     static let truthOrDare = RoulettePreset(
         name: "Truth or Dare",
         segments: [
-            RouletteSegment(label: locString("truth"),       color: AppTheme.wheelColors[0]),
-            RouletteSegment(label: locString("dare"),        color: AppTheme.wheelColors[1]),
-            RouletteSegment(label: locString("truth"),       color: AppTheme.wheelColors[2]),
-            RouletteSegment(label: locString("dare"),        color: AppTheme.wheelColors[3]),
+            RouletteSegment(label: locString("truth"), color: AppTheme.wheelColors[0]),
+            RouletteSegment(label: locString("dare"), color: AppTheme.wheelColors[1]),
+            RouletteSegment(label: locString("truth"), color: AppTheme.wheelColors[2]),
+            RouletteSegment(label: locString("dare"), color: AppTheme.wheelColors[3]),
             RouletteSegment(label: locString("double_dare"), color: AppTheme.wheelColors[4]),
-            RouletteSegment(label: locString("truth"),       color: AppTheme.wheelColors[5]),
-            RouletteSegment(label: locString("dare"),        color: AppTheme.wheelColors[6]),
-            RouletteSegment(label: locString("wildcard"),    color: AppTheme.wheelColors[7]),
+            RouletteSegment(label: locString("truth"), color: AppTheme.wheelColors[5]),
+            RouletteSegment(label: locString("dare"), color: AppTheme.wheelColors[6]),
+            RouletteSegment(label: locString("wildcard"), color: AppTheme.wheelColors[7])
         ]
     )
 
     static let partyMoves = RoulettePreset(
         name: "Party Moves",
         segments: [
-            RouletteSegment(label: "💃",       color: AppTheme.wheelColors[0]),
-            RouletteSegment(label: "🕺",       color: AppTheme.wheelColors[1]),
-            RouletteSegment(label: "🤸",       color: AppTheme.wheelColors[2]),
-            RouletteSegment(label: "🎤",       color: AppTheme.wheelColors[3]),
-            RouletteSegment(label: "🪩",       color: AppTheme.wheelColors[4]),
-            RouletteSegment(label: "💪",       color: AppTheme.wheelColors[5]),
-            RouletteSegment(label: "🙌",       color: AppTheme.wheelColors[6]),
-            RouletteSegment(label: "🎭",       color: AppTheme.wheelColors[7]),
+            RouletteSegment(label: "💃", color: AppTheme.wheelColors[0]),
+            RouletteSegment(label: "🕺", color: AppTheme.wheelColors[1]),
+            RouletteSegment(label: "🤸", color: AppTheme.wheelColors[2]),
+            RouletteSegment(label: "🎤", color: AppTheme.wheelColors[3]),
+            RouletteSegment(label: "🪩", color: AppTheme.wheelColors[4]),
+            RouletteSegment(label: "💪", color: AppTheme.wheelColors[5]),
+            RouletteSegment(label: "🙌", color: AppTheme.wheelColors[6]),
+            RouletteSegment(label: "🎭", color: AppTheme.wheelColors[7])
         ]
     )
 }
@@ -102,24 +102,42 @@ struct FanWheelPreset: Identifiable {
     static let classic = FanWheelPreset(
         name: "Classic Prizes",
         segments: [
-            WheelSegment(label: locString("prize_big"),     color: AppTheme.wheelColors[0], icon: "gift.fill"),
-            WheelSegment(label: locString("prize_small"),   color: AppTheme.wheelColors[1], icon: "gift"),
+            WheelSegment(label: locString("prize_big"), color: AppTheme.wheelColors[0], icon: "gift.fill"),
+            WheelSegment(label: locString("prize_small"), color: AppTheme.wheelColors[1], icon: "gift"),
             WheelSegment(label: locString("prize_nothing"), color: AppTheme.wheelColors[2], icon: "xmark"),
-            WheelSegment(label: locString("prize_big"),     color: AppTheme.wheelColors[3], icon: "gift.fill"),
-            WheelSegment(label: locString("prize_small"),   color: AppTheme.wheelColors[4], icon: "gift"),
-            WheelSegment(label: locString("prize_jackpot"), color: AppTheme.wheelColors[5], icon: "star.fill"),
+            WheelSegment(label: locString("prize_big"), color: AppTheme.wheelColors[3], icon: "gift.fill"),
+            WheelSegment(label: locString("prize_small"), color: AppTheme.wheelColors[4], icon: "gift"),
+            WheelSegment(label: locString("prize_jackpot"), color: AppTheme.wheelColors[5], icon: "star.fill")
         ]
     )
 
     static let challenges = FanWheelPreset(
         name: "Challenges",
         segments: [
-            WheelSegment(label: locString("challenge_sing"),   color: AppTheme.wheelColors[0], icon: "music.mic"),
-            WheelSegment(label: locString("challenge_dance"),  color: AppTheme.wheelColors[1], icon: "figure.dance"),
-            WheelSegment(label: locString("challenge_joke"),   color: AppTheme.wheelColors[2], icon: "theatermasks.fill"),
-            WheelSegment(label: locString("challenge_mime"),   color: AppTheme.wheelColors[3], icon: "hand.raised.fill"),
-            WheelSegment(label: locString("challenge_story"),  color: AppTheme.wheelColors[4], icon: "book.fill"),
-            WheelSegment(label: locString("challenge_impress"), color: AppTheme.wheelColors[5], icon: "crown.fill"),
+            WheelSegment(
+                label: locString("challenge_sing"),
+                color: AppTheme.wheelColors[0], icon: "music.mic"
+            ),
+            WheelSegment(
+                label: locString("challenge_dance"),
+                color: AppTheme.wheelColors[1], icon: "figure.dance"
+            ),
+            WheelSegment(
+                label: locString("challenge_joke"),
+                color: AppTheme.wheelColors[2], icon: "theatermasks.fill"
+            ),
+            WheelSegment(
+                label: locString("challenge_mime"),
+                color: AppTheme.wheelColors[3], icon: "hand.raised.fill"
+            ),
+            WheelSegment(
+                label: locString("challenge_story"),
+                color: AppTheme.wheelColors[4], icon: "book.fill"
+            ),
+            WheelSegment(
+                label: locString("challenge_impress"),
+                color: AppTheme.wheelColors[5], icon: "crown.fill"
+            )
         ]
     )
 }
