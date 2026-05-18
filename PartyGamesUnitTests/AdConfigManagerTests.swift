@@ -1,19 +1,55 @@
 import XCTest
 @testable import PartyGames
 
+// MARK: - Mocks
+
+final class MockURLSession: URLSessionProviding, @unchecked Sendable {
+    var mockData: Data?
+    var mockError: Error?
+
+    func data(from url: URL) async throws -> (Data, URLResponse) {
+        if let error = mockError { throw error }
+        let data = mockData ?? Data()
+        let response = URLResponse(url: url, mimeType: nil, expectedContentLength: data.count, textEncodingName: nil)
+        return (data, response)
+    }
+}
+
+final class MockKeyValueStorage: KeyValueStorageProviding, @unchecked Sendable {
+    var store: [String: Data] = [:]
+
+    func data(forKey key: String) -> Data? {
+        store[key]
+    }
+
+    func set(_ data: Data?, forKey key: String) {
+        store[key] = data
+    }
+}
+
+// MARK: - Tests
+
 @MainActor
 final class AdConfigManagerTests: XCTestCase {
     var adManager: AdConfigManager!
+    var mockSession: MockURLSession!
+    var mockStorage: MockKeyValueStorage!
 
     override func setUp() {
         super.setUp()
-        UserDefaults.standard.removeObject(forKey: "ad_remote_config_cache")
-        adManager = AdConfigManager(remoteURL: "https://example.com/ad_config.json")
+        mockSession = MockURLSession()
+        mockStorage = MockKeyValueStorage()
+        adManager = AdConfigManager(
+            remoteURL: "https://example.com/ad_config.json",
+            urlSession: mockSession,
+            storage: mockStorage
+        )
     }
 
     override func tearDown() {
-        UserDefaults.standard.removeObject(forKey: "ad_remote_config_cache")
         adManager = nil
+        mockSession = nil
+        mockStorage = nil
         super.tearDown()
     }
 
@@ -106,5 +142,72 @@ final class AdConfigManagerTests: XCTestCase {
     func test_activeBannerConfig_returnsPlaceholderWhenNil() {
         adManager.config = AdRemoteConfig(adsEnabled: false, bannerAd: nil)
         XCTAssertEqual(adManager.activeBannerConfig.text, "Enjoying Party Games? Share with friends!")
+    }
+
+    // MARK: - fetchRemoteConfig (network)
+
+    func test_fetchRemoteConfig_decodesAndUpdatesConfig() async {
+        let remote = AdRemoteConfig(adsEnabled: true, splashAd: SplashAdConfig.placeholder)
+        mockSession.mockData = try! JSONEncoder().encode(remote)
+
+        await adManager.fetchRemoteConfig()
+
+        XCTAssertTrue(adManager.config.adsEnabled)
+        XCTAssertNotNil(adManager.config.splashAd)
+    }
+
+    func test_fetchRemoteConfig_networkError_keepsExistingConfig() async {
+        adManager.config = AdRemoteConfig(adsEnabled: true, splashAd: SplashAdConfig.placeholder)
+        mockSession.mockError = URLError(.notConnectedToInternet)
+
+        await adManager.fetchRemoteConfig()
+
+        // Config unchanged after network failure
+        XCTAssertTrue(adManager.config.adsEnabled)
+    }
+
+    func test_fetchRemoteConfig_invalidJSON_keepsExistingConfig() async {
+        adManager.config = AdRemoteConfig(adsEnabled: false)
+        mockSession.mockData = Data("not json".utf8)
+
+        await adManager.fetchRemoteConfig()
+
+        XCTAssertFalse(adManager.config.adsEnabled)
+    }
+
+    // MARK: - cache
+
+    func test_fetchRemoteConfig_cachesToStorage() async {
+        let remote = AdRemoteConfig(adsEnabled: true)
+        mockSession.mockData = try! JSONEncoder().encode(remote)
+
+        await adManager.fetchRemoteConfig()
+
+        XCTAssertNotNil(mockStorage.store["ad_remote_config_cache"])
+    }
+
+    func test_init_loadsCachedConfig() {
+        let cached = AdRemoteConfig(adsEnabled: true, bannerAd: BannerAdConfig.placeholder)
+        let data = try! JSONEncoder().encode(cached)
+        mockStorage.store["ad_remote_config_cache"] = data
+
+        let manager = AdConfigManager(
+            remoteURL: "https://example.com/ad_config.json",
+            urlSession: mockSession,
+            storage: mockStorage
+        )
+
+        XCTAssertTrue(manager.config.adsEnabled)
+        XCTAssertNotNil(manager.config.bannerAd)
+    }
+
+    func test_init_noCache_startsFresh() {
+        let manager = AdConfigManager(
+            remoteURL: "https://example.com/ad_config.json",
+            urlSession: mockSession,
+            storage: mockStorage
+        )
+
+        XCTAssertFalse(manager.config.adsEnabled)
     }
 }

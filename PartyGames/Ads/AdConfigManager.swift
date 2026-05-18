@@ -1,4 +1,5 @@
 import SwiftUI
+import OSLog
 
 // MARK: - Remote Ad Configuration
 struct AdRemoteConfig: Codable {
@@ -46,11 +47,20 @@ final class AdConfigManager: ObservableObject {
 
     private let remoteURL: String
     private let cacheKey = "ad_remote_config_cache"
+    private let urlSession: URLSessionProviding
+    private let storage: KeyValueStorageProviding
+    private let logger = Logger(subsystem: "com.partygames.app", category: "ad")
 
-    init(remoteURL: String? = nil) {
+    init(
+        remoteURL: String? = nil,
+        urlSession: URLSessionProviding = DefaultURLSessionProvider(),
+        storage: KeyValueStorageProviding = DefaultKeyValueStorageProvider()
+    ) {
         self.remoteURL = remoteURL
             ?? Bundle.main.object(forInfoDictionaryKey: "AdRemoteConfigURL") as? String
             ?? Self.defaultRemoteURL
+        self.urlSession = urlSession
+        self.storage = storage
         loadCached()
     }
 
@@ -79,12 +89,12 @@ final class AdConfigManager: ObservableObject {
         guard let url = URL(string: remoteURL) else { return }
 
         do {
-            let (data, _) = try await URLSession.shared.data(from: url)
+            let (data, _) = try await urlSession.data(from: url)
             let decoded = try JSONDecoder().decode(AdRemoteConfig.self, from: data)
             config = decoded
             cache(decoded)
         } catch {
-            print("Ad remote config fetch failed, using cache: \(error.localizedDescription)")
+            logger.warning("Ad remote config fetch failed, using cache: \(error.localizedDescription)")
         }
     }
 
@@ -108,11 +118,11 @@ final class AdConfigManager: ObservableObject {
     // MARK: - Cache
     private func cache(_ config: AdRemoteConfig) {
         guard let data = try? JSONEncoder().encode(config) else { return }
-        UserDefaults.standard.set(data, forKey: cacheKey)
+        storage.set(data, forKey: cacheKey)
     }
 
     private func loadCached() {
-        guard let data = UserDefaults.standard.data(forKey: cacheKey),
+        guard let data = storage.data(forKey: cacheKey),
               let cached = try? JSONDecoder().decode(AdRemoteConfig.self, from: data)
         else { return }
         config = cached

@@ -24,6 +24,7 @@
 		D5D2B002EBFBF9A340796D9C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAA00145B99CD1435BB05644 /* Localizable.strings */; };
 		D8987869A1B3B9A922541A4E /* FingerRouletteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AD9529B057FEF57BADB986 /* FingerRouletteViewModel.swift */; };
 		E0BDE35C91D268CDBDAF98E2 /* AdConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B058EC292D93045963883 /* AdConfigManager.swift */; };
+		E4BEB0C4B68504C79D3C501C /* Providers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694AC7F8155B57DF2660F7C4 /* Providers.swift */; };
 		E83106C8DD4389B73B66C38B /* FanWheelViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AE06A71CE886AC22B8A5B /* FanWheelViewModelTests.swift */; };
 		EC553FB09966499175998917 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF34C1AE251AA486B87F89 /* ViewExtensions.swift */; };
 		EF5366010DB37447CF4EFEB6 /* FanWheelGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE249C8F80B9FF0D02BF0C2C /* FanWheelGameView.swift */; };
@@ -64,6 +65,7 @@
 		500A61DBC21C610309ED3419 /* FingerRouletteGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerRouletteGameView.swift; sourceTree = "<group>"; };
 		63CF1244286B2C0A7C01BA45 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6913246FEAC08DC6131FC3D3 /* CardFlipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlipViewModel.swift; sourceTree = "<group>"; };
+		694AC7F8155B57DF2660F7C4 /* Providers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Providers.swift; sourceTree = "<group>"; };
 		6D2FCA9BF65E568E769DD43B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		78A6BA077874B276F3AF6064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		83BF34C1AE251AA486B87F89 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				F0B534E50577672D0D325793 /* AppTheme.swift */,
+				694AC7F8155B57DF2660F7C4 /* Providers.swift */,
 				83BF34C1AE251AA486B87F89 /* ViewExtensions.swift */,
 			);
 			path = Common;
@@ -375,6 +378,7 @@
 				D8987869A1B3B9A922541A4E /* FingerRouletteViewModel.swift in Sources */,
 				4003A821980D81C858A18C30 /* GameModels.swift in Sources */,
 				B5A6437BDF963248DC9C7AF2 /* PartyGamesApp.swift in Sources */,
+				E4BEB0C4B68504C79D3C501C /* Providers.swift in Sources */,
 				094F482BBB69165990E39A5B /* SplashAdView.swift in Sources */,
 				EC553FB09966499175998917 /* ViewExtensions.swift in Sources */,
 			);

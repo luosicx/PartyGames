@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "command": "cd /Users/xuchen/Documents/AICode/PartyGames && if echo \"$FILE_PATH\" | grep -q '\\.swift$'; then swiftlint lint --path \"$FILE_PATH\" --quiet 2>/dev/null || true; fi",
+        "description": "SwiftLint on edited Swift files"
+      }
+    ]
+  },
+  "allowedTools": [
+    "Bash(xcodebuild:*)",
+    "Bash(xcodegen:*)",
+    "Bash(swift:*)",
+    "Bash(swiftlint:*)",
+    "Bash(xcrun:*)",
+    "Bash(xcode-select:*)"
+  ]
+}
